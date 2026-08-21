@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Si utiliza este trabajo, por favor cítelo."
+title: "Guía de Referencias Radiocomunicaciones: Código Q (UIT), Claves R (CONAF), Claves 10 (CB Coquimbo) y alfabeto fonético OACI"
+authors:
+  - family-names: Varela
+    given-names: Patricio
+    alias: CA2OPX
+    orcid: https://orcid.org/0009-0002-1087-9445
+version: "1.0"
+date-released: "2026-08-21"
+type: manual
+keywords:
+  - "radio"
+  - "radiocomunicaciones"
+  - "codigo-q"
+  - "emergencias"
+  - "manual-de-campo"
+abstract: "Manual de campo A4 imprimible de consulta rápida que compila, en sistemas separados, el Código Q de la UIT, las Claves R de CONAF, las Claves 10 del Cuerpo de Bomberos de Coquimbo y el alfabeto de deletreo radiotelefónico de OACI."
+repository-code: "https://github.com/2674321/Guia-radiocomunicaciones-CA2OPX"
