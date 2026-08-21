@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Control de integridad: compara la fuente (GUIA_RADIOCOMUNICACIONES_BOMBEROS.md)
+Control de integridad: compara la fuente (FUENTE_RADIOCOMUNICACIONES.md)
 contra el documento generado (manual_radiocomunicaciones.html).
 
 Verifica:
@@ -16,7 +16,7 @@ import sys
 import unicodedata
 from collections import Counter
 
-MD = "GUIA_RADIOCOMUNICACIONES_BOMBEROS.md"
+MD = "FUENTE_RADIOCOMUNICACIONES.md"
 HTML = "manual_radiocomunicaciones.html"
 
 # Correcciones puramente tipográficas permitidas (no cambian significado operativo)
