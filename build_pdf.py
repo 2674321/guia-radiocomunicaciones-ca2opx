@@ -3,7 +3,7 @@
 from weasyprint import HTML
 
 SRC = "manual_radiocomunicaciones.html"
-OUT = "GUIA_RADIOCOMUNICACIONES_A4.pdf"
+OUT = "GUIA_RADIOCOMUNICACIONES.pdf"
 
 HTML(filename=SRC).write_pdf(OUT)
 print(f"PDF generado: {OUT}")
