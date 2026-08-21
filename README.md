@@ -1,5 +1,8 @@
 # Guía de Referencias Radiocomunicaciones
 
+> 🌐 **[Ver la guía online](https://2674321.github.io/guia-radiocomunicaciones-ca2opx/)** · [Descargar PDF](GUIA_RADIOCOMUNICACIONES.pdf)
+
+
 Manual de campo de consulta rápida, formato **A4 vertical**, optimizado para impresión
 (en color o blanco y negro). Edición personal de **CA2OPX**.
 
