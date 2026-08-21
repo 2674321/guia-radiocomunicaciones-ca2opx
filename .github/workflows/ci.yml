@@ -7,10 +7,37 @@ on:
 jobs:
   integridad:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - nombre: Bomberos
+            md: FUENTE_RADIOCOMUNICACIONES.md
+            html: manual_radiocomunicaciones.html
+          - nombre: Banda Ciudadana
+            md: FUENTE_RADIOCOMUNICACIONES_GENERAL.md
+            html: manual_codigos10_generales.html
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Control de integridad del documento
-        run: python3 check_integrity.py
+      - name: Control de integridad — edición ${{ matrix.nombre }}
+        run: python3 check_integrity.py --md "${{ matrix.md }}" --html "${{ matrix.html }}"
+
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Instalar WeasyPrint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0
+          pip install weasyprint
+      - name: Generar PDFs (prueba de humo)
+        run: |
+          python3 build_pdf.py manual_radiocomunicaciones.html GUIA_RADIOCOMUNICACIONES.pdf
+          python3 build_pdf.py manual_codigos10_generales.html GUIA_RADIOCOMUNICACIONES_GENERAL.pdf
