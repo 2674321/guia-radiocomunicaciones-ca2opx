@@ -8,7 +8,7 @@
 > 🌐 **[Ver la guía online](https://2674321.github.io/guia-radiocomunicaciones-ca2opx/)** · [Descargar PDF](GUIA_RADIOCOMUNICACIONES.pdf)
 
 <p align="center">
-  <img src="docs/qr-guia-online.png" alt="QR — guía online" width="180">
+  <img src="docs/qr-guia-online.png" alt="QR — edición Bomberos de Coquimbo" width="180">
 <img src="docs/qr-guia-general-online.png" alt="QR — edición general (códigos 10 CB)" width="180">
   <br><sub>Escanea para consultar la guía desde el celular</sub>
 </p>
