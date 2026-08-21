@@ -27,4 +27,3 @@ Incluye en el reporte:
 ## Alcance
 
 Este repositorio contiene documentación técnica y scripts auxiliares (Python).
-No se almacenan credenciales ni claves de radio reales de uso operativo sensible.
