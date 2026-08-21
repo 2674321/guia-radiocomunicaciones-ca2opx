@@ -1,0 +1,67 @@
+CÓDIGOS 10 - BANDA CIUDADANA (CB)
+================================
+
+10-1   Mala recepción / Señal débil
+10-2   Buena recepción / Señal fuerte
+10-3   Alto la transmisión / Detener emisión
+10-4   Entendido / Mensaje recibido / OK
+10-5   Retransmitir mensaje / Pasar recado
+10-6   Ocupado / Espere un momento
+10-7   Fuera de servicio / Apagando la radio
+10-8   En servicio / Listo para recibir
+10-9   Repetir mensaje
+10-10  Transmisión terminada / En escucha
+10-11  Hablar demasiado rápido
+10-12  Visitante presente / Compañía en la estación
+10-13  Informe de condiciones del tiempo / Carretera
+10-14  Informe de estado
+10-15  Mensaje respondido
+10-16  Recoger en...
+10-17  Asunto urgente
+10-18  Algo para nosotros / Mensaje pendiente
+10-19  Nada para usted / Regresar a la base
+10-20  Ubicación / Posición actual
+10-21  Llamar por teléfono
+10-22  Cancelar último mensaje / Reportarse en persona
+10-23  Quedar a la espera / Stand by
+10-24  Terminada la última asignación
+10-25  ¿Puede comunicarse con...?
+10-26  Ignorar último mensaje
+10-27  Cambiar al canal...
+10-28  Identificación de la estación / Nombre / Apodo
+10-29  Tiempo excedido para contactar
+10-30  Uso no autorizado del canal / Mal uso
+10-32  Dar reporte de señal (Radio y Santiago)
+10-33  EMERGENCIA / Auxilio inmediato
+10-34  Asistencia necesaria en esta estación
+10-35  Información confidencial
+10-36  Hora exacta
+10-37  Se necesita grúa en...
+10-38  Se necesita ambulancia en...
+10-39  Mensaje entregado
+10-41  Cambiar de canal
+10-42  Accidente de tráfico en...
+10-43  Tráfico congestionado en...
+10-44  Tengo mensaje para...
+10-45  Todas las unidades reportarse
+10-50  Break (Pedir permiso para entrar al canal)
+10-60  ¿Cuál es el número del siguiente mensaje?
+10-62  No puedo recibirle, use teléfono
+10-65  Esperando su próximo mensaje
+10-67  Todas las unidades conformes
+10-70  Incendio en...
+10-73  Trampa de velocidad (Radar) en...
+10-75  Causando interferencia
+10-77  Contacto negativo
+10-84  Mi número telefónico es...
+10-85  Mi dirección es...
+10-91  Hable más cerca del micrófono
+10-92  Su radio está fuera de ajuste
+10-93  Verifique mi frecuencia en este canal
+10-94  Por favor demorarse en hablar (Conteo)
+10-95  Transmitir portadora por 5 segundos
+10-99  Misión completada / Todo resuelto
+10-100 Parada técnica / Necesidad personal
+
+================================
+Fuente: Manuales de Radiocomunicación y Estándares de Banda Ciudadana (CB).

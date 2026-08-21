@@ -292,12 +292,13 @@
 
 # 3. CÓDIGOS 10 — SISTEMA GENERAL DE DIEZ CÓDIGOS
 
-**Fuente: sistema de diez códigos — origen: Departamento de Policía de Illinois, 1937**
+**Fuente: radio CB — Citizen Band / Banda Ciudadana**
 
-> Señales breves usadas principalmente en radio y comunicaciones policiales/seguridad para transmitir información de forma rápida y clara. Se reproduce la lista común sin adaptaciones locales.
+> Señales breves usadas en radio, banda ciudadana (CB) y comunicaciones de seguridad para transmitir información de forma rápida y clara. Se reproduce la lista común sin adaptaciones locales.
 
 | Código | Significado |
 |---|---|
+| 10-0 | Precaución / Cuidado |
 | 10-1 | Señal mala |
 | 10-2 | Señal buena |
 | 10-3 | Alto la transmisión |
@@ -397,6 +398,7 @@
 | 10-97 | Llegada al lugar |
 | 10-98 | Terminación del llamado |
 | 10-99 | Solicitud de llamada |
+| 10-100 | Parada técnica / Necesidad personal |
 
 # 4. ALFABETO FONÉTICO INTERNACIONAL
 
