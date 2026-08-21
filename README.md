@@ -3,6 +3,8 @@
 [![Licencia MIT](https://img.shields.io/badge/licencia-MIT-blue)](LICENSE) ![Versión](https://img.shields.io/badge/versi%C3%B3n-v1.0-green) ![Formato](https://img.shields.io/badge/formato-A4%20imprimible-informational) [![CI](https://github.com/2674321/guia-radiocomunicaciones-ca2opx/actions/workflows/ci.yml/badge.svg)](https://github.com/2674321/guia-radiocomunicaciones-ca2opx/actions/workflows/ci.yml)
 
 
+> Existen dos ediciones: **🚒 Bomberos de Coquimbo** (claves 10 locales) y **📡 [General](manual_codigos10_generales.html)** (códigos 10 universales). PDFs: [original](GUIA_RADIOCOMUNICACIONES.pdf) · [general](GUIA_RADIOCOMUNICACIONES_GENERAL.pdf)
+
 > 🌐 **[Ver la guía online](https://2674321.github.io/guia-radiocomunicaciones-ca2opx/)** · [Descargar PDF](GUIA_RADIOCOMUNICACIONES.pdf)
 
 <p align="center">

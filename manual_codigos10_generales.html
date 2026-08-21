@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Guía de Referencias Radiocomunicaciones</title>
+<style>
+/* ============ PÁGINAS ============ */
+@page {
+  size: A4 portrait;
+  margin: 21mm 15mm 19mm 15mm;
+  @bottom-left {
+    content: element(rf);
+  }
+  @bottom-right {
+    content: "Página " counter(page);
+    font-family: "Noto Sans", sans-serif;
+    font-size: 7.5pt;
+    color: #555555;
+  }
+}
+@page cover {
+  margin: 0;
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+@page secq  { @top-center { content: element(rhq); } }
+@page secr  { @top-center { content: element(rhr); } }
+@page sec10 { @top-center { content: element(rh10); } }
+@page secfon{ @top-center { content: element(rhfon); } }
+
+/* ============ BASE ============ */
+html, body {
+  font-family: "Noto Sans", "DejaVu Sans", sans-serif;
+  font-size: 9pt;
+  color: #1a1a1a;
+  line-height: 1.35;
+}
+p { margin: 0 0 2.5mm 0; }
+
+/* ============ ENCABEZADOS CORRIENTES ============ */
+.rh {
+  width: 180mm;
+  border-bottom: 0.6pt solid #999999;
+  padding-bottom: 1.4mm;
+}
+.rh-main { font-size: 7.5pt; font-weight: 700; letter-spacing: 0.08em; color: #222222; }
+.rh-sub  { font-size: 7.5pt; color: #555555; }
+.rhq   { position: running(rhq); }
+.rhr   { position: running(rhr); }
+.rh10  { position: running(rh10); }
+.rhfon { position: running(rhfon); }
+
+/* Pie de página corriente */
+.rf { position: running(rf); font-size: 7.5pt; color: #555555; }
+.rf-call { letter-spacing: 0.12em; color: #777777; }
+
+/* ============ PORTADA ============ */
+.cover {
+  page: cover;
+  width: 210mm;
+  height: 296mm;
+  padding: 30mm 24mm;
+  box-sizing: border-box;
+  display: block;
+}
+.cover-top { border-top: 3pt solid #8b1e1e; padding-top: 4mm; }
+.cover-kicker {
+  font-size: 10pt; letter-spacing: 0.28em; font-weight: 700;
+  color: #8b1e1e; text-transform: uppercase;
+}
+.cover-title {
+  margin-top: 42mm;
+  font-size: 34pt; font-weight: 800; line-height: 1.12;
+  letter-spacing: 0.02em; text-transform: uppercase;
+}
+.cover-title .l2 { display: block; font-size: 26pt; font-weight: 700; color: #333333; margin-top: 2mm; }
+.cover-call {
+  margin-top: 7mm;
+  font-size: 10pt; font-weight: 600; letter-spacing: 0.35em;
+  color: #555555;
+}
+.cover-revision { margin-top: 3mm; font-size: 9pt; color: #666666; }
+.cover-rule { width: 58mm; border-bottom: 2.2pt solid #8b1e1e; margin: 12mm 0 10mm; }
+.cover-subtitle { font-size: 13.5pt; font-weight: 600; color: #222222; }
+.cover-kind { margin-top: 4mm; font-size: 11pt; color: #444444; letter-spacing: 0.06em; text-transform: uppercase; }
+.cover-sources {
+  position: absolute;
+  top: 232mm; left: 24mm; right: 24mm;
+  border-top: 0.6pt solid #bbbbbb;
+  padding-top: 5mm;
+  font-size: 9pt; color: #333333;
+}
+.cover-sources .cs-title { font-weight: 700; font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase; color: #666666; margin-bottom: 2.5mm; }
+.cover-sources table { border-collapse: collapse; }
+.cover-sources td { padding: 0.8mm 6mm 0.8mm 0; vertical-align: top; font-size: 9pt; }
+.cover-note { margin-top: 5mm; font-size: 8pt; color: #666666; font-style: italic; }
+
+/* ============ SECCIONES ============ */
+section.doc { page-break-before: always; }
+section.sec-q   { page: secq; }
+section.sec-r   { page: secr; }
+section.sec-10  { page: sec10; }
+section.sec-fon { page: secfon; }
+
+.sec-head { margin-bottom: 6mm; }
+.sec-kicker {
+  font-size: 8.5pt; font-weight: 700; letter-spacing: 0.22em;
+  color: #8b1e1e; text-transform: uppercase; margin-bottom: 1.5mm;
+}
+h1 {
+  font-size: 21pt; font-weight: 800; margin: 0 0 2.5mm 0;
+  padding-bottom: 2.5mm; border-bottom: 2.2pt solid #8b1e1e;
+  text-transform: uppercase; letter-spacing: 0.02em;
+}
+.src-line { font-size: 9.5pt; margin: 2.5mm 0 0 0; }
+.src-line em { color: #444444; }
+
+h2 {
+  font-size: 12pt; font-weight: 700; margin: 7mm 0 2.5mm 0;
+  padding-bottom: 1.2mm; border-bottom: 0.8pt solid #999999;
+  break-after: avoid; page-break-after: avoid;
+}
+h2 .range { float: right; font-size: 8pt; font-weight: 600; color: #666666; letter-spacing: 0.05em; margin-top: 2.2mm; }
+h3 { font-size: 10pt; font-weight: 700; margin: 5mm 0 2mm 0; break-after: avoid; page-break-after: avoid; }
+
+.note {
+  background: #f4f4f4;
+  border-left: 3pt solid #8b1e1e;
+  padding: 2.5mm 3.5mm;
+  font-size: 8.5pt;
+  margin: 3mm 0 4mm 0;
+}
+.note strong { text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ============ TABLAS ============ */
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2mm 0 6mm 0;
+}
+table.data thead { display: table-header-group; }
+table.data th {
+  background: #ececec;
+  border: 0.5pt solid #aaaaaa;
+  font-size: 7.6pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 1.8mm 2.2mm;
+  color: #111111;
+}
+table.data td {
+  border: 0.5pt solid #cccccc;
+  padding: 1.9mm 2.2mm;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+table.data tbody tr:nth-child(even) td { background: #f8f8f8; }
+table.data tr { break-inside: avoid; page-break-inside: avoid; }
+
+/* Código Q */
+.t-q .code { font-weight: 800; white-space: nowrap; width: 15mm; }
+.t-q .preg { width: 62mm; }
+
+/* Claves R */
+.t-r .code { font-weight: 800; white-space: nowrap; width: 20mm; }
+
+/* Claves 10 */
+.t-10 .clave { font-weight: 800; color: #8b1e1e; white-space: nowrap; width: 23mm; font-size: 9.5pt; }
+.t-10 .rec   { font-weight: 700; width: 41mm; }
+
+/* Alfabeto */
+.t-fon .letra { font-weight: 800; width: 22mm; }
+.t-fon .palabra { font-weight: 600; letter-spacing: 0.08em; }
+table.data.t-fon td { padding: 1.1mm 2.2mm; }
+
+/* Tabla de fuentes en portada y separación de sistemas */
+.fuentes-lista { margin: 3mm 0 0 0; }
+</style>
+</head>
+<body>
+
+<!-- ===== PIE DE PÁGINA CORRIENTE ===== -->
+<div class="rf">
+  Guía de Radiocomunicaciones<br>
+  <span class="rf-call">CA2OPX</span>
+</div>
+
+<!-- ===== ENCABEZADOS CORRIENTES POR SECCIÓN ===== -->
+<div class="rh rhq">
+  <div class="rh-main">GUÍA DE RADIOCOMUNICACIONES</div>
+  <div class="rh-sub">Código Q — UIT</div>
+</div>
+<div class="rh rhr">
+  <div class="rh-main">GUÍA DE RADIOCOMUNICACIONES</div>
+  <div class="rh-sub">Claves R — CONAF</div>
+</div>
+<div class="rh rh10">
+  <div class="rh-main">GUÍA DE RADIOCOMUNICACIONES</div>
+  <div class="rh-sub">Claves 10 — Cuerpo de Bomberos de Coquimbo</div>
+</div>
+<div class="rh rhfon">
+  <div class="rh-main">GUÍA DE RADIOCOMUNICACIONES</div>
+  <div class="rh-sub">Alfabeto Fonético — OACI</div>
+</div>
+
+<!-- ================= PORTADA ================= -->
+<section class="cover">
+  <div class="cover-top">
+    <div class="cover-kicker">Manual de campo</div>
+  </div>
+  <div class="cover-title">
+    Guía de Referencias<br>Radiocomunicaciones
+  </div>
+  <div class="cover-call">CA2OPX</div>
+  <div class="cover-rule"></div>
+  <div class="cover-subtitle">Código Q &middot; Claves R &middot; Claves 10 &middot; Alfabeto Fonético</div>
+  <div class="cover-kind">Manual de consulta rápida</div>
+  <div class="cover-revision">Última revisión: 21 de agosto de 2026</div>
+
+  <div class="cover-sources">
+    <div class="cs-title">Fuentes normativas</div>
+    <table>
+      <tr><td><strong>Código Q</strong></td><td><em>Fuente: Unión Internacional de Telecomunicaciones (UIT)</em></td></tr>
+      <tr><td><strong>Claves R</strong></td><td><em>Fuente: Corporación Nacional Forestal (CONAF)</em></td></tr>
+      <tr><td><strong>Claves 10</strong></td><td><em>Fuente: Cuerpo de Bomberos de Coquimbo</em></td></tr>
+      <tr><td><strong>Alfabeto Fonético</strong></td><td><em>Fuente: OACI/ICAO — Alfabeto de Deletreo Radiotelefónico Internacional</em></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= SECCIÓN 1 · CÓDIGO Q ================= -->
+<section class="doc sec-q">
+  <header class="sec-head">
+    <div class="sec-kicker">Sección 1</div>
+    <h1>Código Q</h1>
+    <p class="src-line"><strong>Código Q</strong> — <em>Fuente: Unión Internacional de Telecomunicaciones (UIT)</em></p>
+  </header>
+
+  <div class="note">
+    <strong>Convención de uso:</strong> una forma seguida de <strong>?</strong> corresponde a la <strong>pregunta</strong>;
+    sin <strong>?</strong> corresponde a la <strong>respuesta, aviso o significado operativo</strong>.
+    Ejemplo: <strong>QTH?</strong> = ¿Cuál es su posición? / <strong>QTH</strong> = Mi posición es…
+  </div>
+
+  <h2>Servicio general <span class="range">QRA – QUZ</span></h2>
+  <table class="data t-q">
+    <colgroup><col><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Pregunta (QXX?)</th><th>Respuesta / aviso (QXX)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">QRA</td><td class="preg">¿Cómo se llama su estación?</td><td>Mi estación se llama...</td></tr>
+      <tr><td class="code">QRB</td><td class="preg">¿A qué distancia aproximada está usted de mi estación?</td><td>La distancia aproximada entre nuestras estaciones es de... millas náuticas (o kilómetros).</td></tr>
+      <tr><td class="code">QRC</td><td class="preg">¿Qué organización privada (o administración estatal) liquida las cuentas de tasas de su estación?</td><td>Las cuentas de tasas de mi estación las liquida...</td></tr>
+      <tr><td class="code">QRD</td><td class="preg">¿A dónde va usted y de dónde viene?</td><td>Voy a... y vengo de...</td></tr>
+      <tr><td class="code">QRE</td><td class="preg">¿A qué hora calcula llegar a... (o estar sobre...)?</td><td>Calculo llegar a... (o estar sobre...) a las... horas.</td></tr>
+      <tr><td class="code">QRF</td><td class="preg">¿Regresa usted a...?</td><td>Regreso a... / Regrese a...</td></tr>
+      <tr><td class="code">QRG</td><td class="preg">¿Puede decirme mi frecuencia exacta (o la frecuencia exacta de...)?</td><td>Su frecuencia exacta (o la frecuencia exacta de...) es de... kHz (o MHz).</td></tr>
+      <tr><td class="code">QRH</td><td class="preg">¿Varía mi frecuencia?</td><td>Su frecuencia varía.</td></tr>
+      <tr><td class="code">QRI</td><td class="preg">¿Cómo es el tono de mi emisión?</td><td>El tono de su emisión es... (1. Bueno; 2. Variable; 3. Malo).</td></tr>
+      <tr><td class="code">QRK</td><td class="preg">¿Cuál es la inteligibilidad de mis señales (o de las señales de...)?</td><td>La inteligibilidad de sus señales (o de las señales de...) es... (1. Mala; 2. Pobre; 3. Pasable; 4. Buena; 5. Excelente).</td></tr>
+      <tr><td class="code">QRL</td><td class="preg">¿Está usted ocupado?</td><td>Estoy ocupado (o estoy ocupado con...). Ruego no interferir.</td></tr>
+      <tr><td class="code">QRM</td><td class="preg">¿Está usted interferido por otra estación?</td><td>Estoy interferido por otra estación... (1. Nada; 2. Ligeramente; 3. Moderadamente; 4. Fuertemente; 5. Extremadamente).</td></tr>
+      <tr><td class="code">QRN</td><td class="preg">¿Le perturban los ruidos atmosféricos?</td><td>Me perturban los ruidos atmosféricos... (1. Nada; 2. Ligeramente; 3. Moderadamente; 4. Fuertemente; 5. Extremadamente).</td></tr>
+      <tr><td class="code">QRO</td><td class="preg">¿Debo aumentar la potencia de transmisión?</td><td>Aumente la potencia de transmisión.</td></tr>
+      <tr><td class="code">QRP</td><td class="preg">¿Debo disminuir la potencia de transmisión?</td><td>Disminuya la potencia de transmisión.</td></tr>
+      <tr><td class="code">QRQ</td><td class="preg">¿Debo transmitir más deprisa?</td><td>Transmita más deprisa (... palabras por minuto).</td></tr>
+      <tr><td class="code">QRR</td><td class="preg">¿Está usted listo para el funcionamiento automático?</td><td>Estoy listo para el funcionamiento automático. Transmita a... palabras por minuto.</td></tr>
+      <tr><td class="code">QRS</td><td class="preg">¿Debo transmitir más despacio?</td><td>Transmita más despacio (... palabras por minuto).</td></tr>
+      <tr><td class="code">QRT</td><td class="preg">¿Debo cesar la transmisión?</td><td>Cese la transmisión.</td></tr>
+      <tr><td class="code">QRU</td><td class="preg">¿Tiene algo para mí?</td><td>No tengo nada para usted.</td></tr>
+      <tr><td class="code">QRV</td><td class="preg">¿Está usted listo?</td><td>Estoy listo.</td></tr>
+      <tr><td class="code">QRW</td><td class="preg">¿Debo avisar a... que usted le llama en... kHz (o MHz)?</td><td>Avise a... que le llamo en... kHz (o MHz).</td></tr>
+      <tr><td class="code">QRX</td><td class="preg">¿Cuándo volverá a llamarme?</td><td>Volveré a llamarle a las... horas (en la frecuencia de... kHz/MHz).</td></tr>
+      <tr><td class="code">QRY</td><td class="preg">¿Cuál es mi turno? (Se refiere habitualmente a comunicados en cola).</td><td>Su turno es el número... (o según el orden establecido).</td></tr>
+      <tr><td class="code">QRZ</td><td class="preg">¿Quién me llama?</td><td>Le llama... (en... kHz/MHz).</td></tr>
+      <tr><td class="code">QSA</td><td class="preg">¿Cuál es la intensidad de mis señales (o de las señales de...)?</td><td>La intensidad de sus señales (o de las señales de...) es... (1. Apenas perceptible; 2. Débil; 3. Bastante buena; 4. Buena; 5. Muy buena).</td></tr>
+      <tr><td class="code">QSB</td><td class="preg">¿Tienen desvanecimiento mis señales (fading)?</td><td>Sus señales tienen desvanecimiento.</td></tr>
+      <tr><td class="code">QSC</td><td class="preg">¿Es su estación una estación de carga?</td><td>Mi estación es una estación de carga.</td></tr>
+      <tr><td class="code">QSD</td><td class="preg">¿Es defectuosa mi manipulación (o son defectuosos sus signos)?</td><td>Su manipulación es defectuosa (o sus signos son defectuosos).</td></tr>
+      <tr><td class="code">QSE</td><td class="preg">¿Cuál es el desplazamiento estimado del bote salvavidas?</td><td>El desplazamiento estimado del bote salvavidas es...</td></tr>
+      <tr><td class="code">QSF</td><td class="preg">¿Ha efectuado el salvamento de...?</td><td>He efectuado el salvamento de... y me dirijo a...</td></tr>
+      <tr><td class="code">QSG</td><td class="preg">¿Debo transmitir... telegramas de una vez?</td><td>Transmita... telegramas de una vez.</td></tr>
+      <tr><td class="code">QSH</td><td class="preg">¿Puede recalar usando su equipo radiogoniométrico?</td><td>Puedo recalar usando mi equipo radiogoniométrico.</td></tr>
+      <tr><td class="code">QSI</td><td class="preg">¿No he podido interrumpir su transmisión o desea que informe a...?</td><td>No he podido interrumpir su transmisión / Informe a... que no he podido interrumpirle.</td></tr>
+      <tr><td class="code">QSJ</td><td class="preg">¿Cuál es la tasa que debe cobrarse por...?</td><td>La tasa que debe cobrarse por... es de... francos oro.</td></tr>
+      <tr><td class="code">QSK</td><td class="preg">¿Puede oírme entre sus señales; en caso afirmativo, puedo interrumpirle?</td><td>Puedo oírle entre mis señales; puede interrumpirme.</td></tr>
+      <tr><td class="code">QSL</td><td class="preg">¿Puede acusarme recibo?</td><td>Le acuso recibo / Recibido y entendido.</td></tr>
+      <tr><td class="code">QSM</td><td class="preg">¿Debo repetir el último telegrama (o un telegrama anterior)?</td><td>Repita el último telegrama (o el telegrama número...).</td></tr>
+      <tr><td class="code">QSN</td><td class="preg">¿Me ha oído usted en... kHz (o MHz)?</td><td>Le he oído en... kHz (o MHz).</td></tr>
+      <tr><td class="code">QSO</td><td class="preg">¿Puede comunicarse con... directamente (o por retransmisión)?</td><td>Puedo comunicarme con... directamente (o por mediación de...).</td></tr>
+      <tr><td class="code">QSP</td><td class="preg">¿Puede retransmitir a... gratuitamente?</td><td>Retransmitiré a... gratuitamente.</td></tr>
+      <tr><td class="code">QSQ</td><td class="preg">¿Tiene médico a bordo (o está... a bordo)?</td><td>Tengo médico a bordo (o... está a bordo).</td></tr>
+      <tr><td class="code">QSR</td><td class="preg">¿Debo repetir la llamada en la frecuencia de llamada?</td><td>Repita la llamada en la frecuencia de llamada; no le he oído.</td></tr>
+      <tr><td class="code">QSS</td><td class="preg">¿Qué frecuencia de trabajo utilizará usted?</td><td>Utilizaré la frecuencia de trabajo de... kHz (o MHz).</td></tr>
+      <tr><td class="code">QSU</td><td class="preg">¿Debo transmitir o responder en la frecuencia actual?</td><td>Transmita o responda en la frecuencia actual (o en la frecuencia de... kHz/MHz).</td></tr>
+      <tr><td class="code">QSV</td><td class="preg">¿Debo transmitir una serie de V (u otros signos) en esta frecuencia?</td><td>Transmita una serie de V (u otros signos) en esta frecuencia.</td></tr>
+      <tr><td class="code">QSW</td><td class="preg">¿Va a transmitir en esta frecuencia (o en... kHz/MHz) con emisión tipo...?</td><td>Voy a transmitir en esta frecuencia (o en... kHz/MHz) con emisión tipo...</td></tr>
+      <tr><td class="code">QSX</td><td class="preg">¿Quiere escuchar a... (indicativo) en... kHz (o MHz)?</td><td>Estoy escuchando a... en... kHz (o MHz).</td></tr>
+      <tr><td class="code">QSY</td><td class="preg">¿Debo pasar a transmitir en otra frecuencia?</td><td>Pase a transmitir en otra frecuencia (o en... kHz/MHz).</td></tr>
+      <tr><td class="code">QSZ</td><td class="preg">¿Debo transmitir cada palabra o grupo varias veces?</td><td>Transmita cada palabra o grupo dos veces (o... veces).</td></tr>
+      <tr><td class="code">QTA</td><td class="preg">¿Debo anular el telegrama número...?</td><td>Anule el telegrama número...</td></tr>
+      <tr><td class="code">QTB</td><td class="preg">¿Está de acuerdo con mi recuento de palabras?</td><td>No estoy de acuerdo con su recuento de palabras; repetiré la primera letra de cada palabra.</td></tr>
+      <tr><td class="code">QTC</td><td class="preg">¿Cuántos telegramas tiene para transmitir?</td><td>Tengo... telegramas para transmitir (para usted o para...).</td></tr>
+      <tr><td class="code">QTD</td><td class="preg">¿Qué ha recogido el barco de salvamento o la estación de salvamento?</td><td>El barco (o estación) de salvamento ha recogido... (1. Personas; 2. Restos de naufragio).</td></tr>
+      <tr><td class="code">QTE</td><td class="preg">¿Cuál es mi marcación verdadera respecto a usted?</td><td>Su marcación verdadera respecto a mí es de... grados (a las... horas).</td></tr>
+      <tr><td class="code">QTF</td><td class="preg">¿Quiere darme la posición de mi estación según las marcaciones de las estaciones radiogoniométricas?</td><td>La posición de su estación según las marcaciones de las estaciones radiogoniométricas es... latitud,... longitud.</td></tr>
+      <tr><td class="code">QTG</td><td class="preg">¿Va a transmitir dos rayas de seis segundos seguidas de su indicativo?</td><td>Voy a transmitir dos rayas de seis segundos seguidas de mi indicativo.</td></tr>
+      <tr><td class="code">QTH</td><td class="preg">¿Cuál es su posición en latitud y longitud (o según otra indicación)?</td><td>Mi posición es... latitud,... longitud (o según otra indicación).</td></tr>
+      <tr><td class="code">QTI</td><td class="preg">¿Cuál es su rumbo verdadero?</td><td>Mi rumbo verdadero es de... grados.</td></tr>
+      <tr><td class="code">QTJ</td><td class="preg">¿Cuál es su velocidad (velocidad de avance respecto al agua)?</td><td>Mi velocidad es de... nudos (o kilómetros por hora).</td></tr>
+      <tr><td class="code">QTK</td><td class="preg">¿Cuál es la posición de su embarcación o aeronave respecto a la superficie de la tierra?</td><td>La posición de mi embarcación (o aeronave) respecto a la superficie de la tierra es...</td></tr>
+      <tr><td class="code">QTL</td><td class="preg">¿Cuál es su rumbo correcto?</td><td>Mi rumbo correcto es de... grados.</td></tr>
+      <tr><td class="code">QTM</td><td class="preg">¿Cuál es su rumbo magnético?</td><td>Mi rumbo magnético es de... grados.</td></tr>
+      <tr><td class="code">QTN</td><td class="preg">¿A qué hora salió usted de... (lugar)?</td><td>Salí de... a las... horas.</td></tr>
+      <tr><td class="code">QTO</td><td class="preg">¿Ha salido usted del puerto (o ha despegado)?</td><td>He salido del puerto (o he despegado).</td></tr>
+      <tr><td class="code">QTP</td><td class="preg">¿Va a entrar en el puerto (o a amarar, o a aterrizar)?</td><td>Voy a entrar en el puerto (o a amarar, o a aterrizar).</td></tr>
+      <tr><td class="code">QTQ</td><td class="preg">¿Puede comunicarse con mi estación por medio del Código Internacional de Señales?</td><td>Voy a comunicarme con su estación por medio del Código Internacional de Señales.</td></tr>
+      <tr><td class="code">QTR</td><td class="preg">¿Qué hora es exactamente?</td><td>La hora exacta es...</td></tr>
+      <tr><td class="code">QTS</td><td class="preg">¿Quiere transmitir su indicativo de llamada para que pueda medir su frecuencia?</td><td>Voy a transmitir mi indicativo de llamada para que pueda medir mi frecuencia.</td></tr>
+      <tr><td class="code">QTT</td><td class="preg">¿El signo que sigue va a superponerse a otra emisión?</td><td>El signo que sigue va a superponerse a otra emisión.</td></tr>
+      <tr><td class="code">QTU</td><td class="preg">¿A qué horas está abierta su estación?</td><td>Mi estación está abierta desde las... hasta las... horas.</td></tr>
+      <tr><td class="code">QTV</td><td class="preg">¿Debo escuchar por usted en la frecuencia de... kHz (o MHz)?</td><td>Escuche por mí en la frecuencia de... kHz (o MHz) desde las... hasta las... horas.</td></tr>
+      <tr><td class="code">QTW</td><td class="preg">¿Cuál es el estado de los supervivientes?</td><td>Los supervivientes se encuentran en... condiciones y necesitan urgente...</td></tr>
+      <tr><td class="code">QTX</td><td class="preg">¿Quiere mantener su estación abierta para comunicación ulterior conmigo?</td><td>Mantendré mi estación abierta para comunicación ulterior con usted hasta las... horas.</td></tr>
+      <tr><td class="code">QTY</td><td class="preg">¿Se dirige usted al lugar del siniestro; en caso afirmativo, cuándo piensa llegar?</td><td>Me dirijo al lugar del siniestro y pienso llegar a las... horas.</td></tr>
+      <tr><td class="code">QTZ</td><td class="preg">¿Continúa usted la búsqueda?</td><td>Continúo la búsqueda de... (aeronave, barco, supervivientes).</td></tr>
+      <tr><td class="code">QUA</td><td class="preg">¿Tiene noticias de... (indicativo)?</td><td>Aquí están las noticias de...</td></tr>
+      <tr><td class="code">QUB</td><td class="preg">¿Puede darme datos sobre la dirección y velocidad del viento, visibilidad... en... (lugar)?</td><td>Aquí están los datos solicitados sobre el estado del tiempo en...</td></tr>
+      <tr><td class="code">QUC</td><td class="preg">¿Cuál es el número del último mensaje que ha recibido de mí (o de...)?</td><td>El número del último mensaje recibido de usted (o de...) es...</td></tr>
+      <tr><td class="code">QUD</td><td class="preg">¿Ha recibido la señal de urgencia transmitida por... (indicativo)?</td><td>He recibido la señal de urgencia transmitida por... a las... horas.</td></tr>
+      <tr><td class="code">QUE</td><td class="preg">¿Puede hacer uso del idioma... (nombre del idioma) con intérprete si es necesario?</td><td>Puedo hacer uso del idioma... (con intérprete).</td></tr>
+      <tr><td class="code">QUF</td><td class="preg">¿Ha recibido la señal de socorro transmitida por... (indicativo)?</td><td>He recibido la señal de socorro transmitida por... a las... horas.</td></tr>
+      <tr><td class="code">QUG</td><td class="preg">¿Se ve obligado a amarar (o a aterrizar)?</td><td>Me veo obligado a amarar (o a aterrizar) inmediatamente en la posición...</td></tr>
+      <tr><td class="code">QUH</td><td class="preg">¿Puede darme la presión barométrica actual al nivel del mar?</td><td>La presión barométrica actual al nivel del mar es de... unidades.</td></tr>
+      <tr><td class="code">QUI</td><td class="preg">¿Están encendidas sus luces de navegación?</td><td>Mis luces de navegación están encendidas.</td></tr>
+      <tr><td class="code">QUJ</td><td class="preg">¿Puede indicarme el rumbo verdadero para dirigirme hacia usted?</td><td>El rumbo verdadero para dirigirse hacia mí es de... grados a las... horas.</td></tr>
+      <tr><td class="code">QUK</td><td class="preg">¿Puede decirme las condiciones del mar observadas en... (lugar)?</td><td>Las condiciones del mar observadas en... son...</td></tr>
+      <tr><td class="code">QUL</td><td class="preg">¿Puede decirme el oleaje total observado en... (lugar)?</td><td>El oleaje total observado en... es...</td></tr>
+      <tr><td class="code">QUM</td><td class="preg">¿Puedo reanudar el trabajo normal?</td><td>Puede reanudar el trabajo normal. El tráfico de socorro ha terminado.</td></tr>
+      <tr><td class="code">QUN</td><td class="preg">¿Ruego a los barcos que se encuentren en mis proximidades directas que indiquen su posición, rumbo y velocidad?</td><td>Mi posición, rumbo y velocidad son...</td></tr>
+      <tr><td class="code">QUO</td><td class="preg">¿Debo buscar... (1. Una aeronave; 2. Un barco; 3. Un bote salvavidas)?</td><td>Busque... en las proximidades de latitud... longitud...</td></tr>
+      <tr><td class="code">QUP</td><td class="preg">¿Quiere indicar su posición por medio de... (1. Reflector; 2. Señales de humo; 3. Destellos)?</td><td>Indico mi posición por medio de...</td></tr>
+      <tr><td class="code">QUQ</td><td class="preg">¿Debo orientar mi reflector verticalmente hacia el cielo para guiarle?</td><td>Oriente su reflector verticalmente. Al avistar la aeronave, dirija el haz hacia el agua en la dirección del viento para facilitar el amaraje.</td></tr>
+      <tr><td class="code">QUR</td><td class="preg">¿Han alcanzado los supervivientes el equipo de salvamento?</td><td>Los supervivientes han alcanzado el equipo de salvamento / han sido recogidos por...</td></tr>
+      <tr><td class="code">QUS</td><td class="preg">¿Ha avistado supervivientes o restos de naufragio?</td><td>He avistado... (1. Supervivientes en el agua; 2. Supervivientes en botes; 3. Restos de naufragio) en la posición...</td></tr>
+      <tr><td class="code">QUT</td><td class="preg">¿Puede indicar la posición del siniestro?</td><td>La posición del siniestro está indicada por... (1. Boya; 2. Llama marina; 3. Radiobaliza).</td></tr>
+      <tr><td class="code">QUU</td><td class="preg">¿Debo dirigir el buque o aeronave hacia mi posición?</td><td>Dirija el buque (o aeronave) hacia su posición de acuerdo con el rumbo...</td></tr>
+      <tr><td class="code">QUW</td><td class="preg">¿Se encuentra usted en la zona de búsqueda descrita como...?</td><td>Me encuentro en la zona de búsqueda descrita como...</td></tr>
+      <tr><td class="code">QUY</td><td class="preg">¿Se ha marcado la posición del bote salvavidas?</td><td>La posición del bote salvavidas fue marcada a las... horas por...</td></tr>
+      <tr><td class="code">QUZ</td><td class="preg">¿Puede restringir las transmisiones a comunicaciones de socorro solamente?</td><td>Restrinja las transmisiones. Hay tráfico de socorro en curso.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Servicio aeronáutico <span class="range">QAA – QNT</span></h2>
+  <table class="data t-q">
+    <colgroup><col><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Pregunta (QXX?)</th><th>Respuesta / aviso (QXX)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">QAA</td><td class="preg">¿A qué hora calcula llegar a...?</td><td>Calculo llegar a... a las... horas.</td></tr>
+      <tr><td class="code">QAB</td><td class="preg">¿Tiene autorización para dirigirse a...?</td><td>Está autorizado para dirigirse a... (con rumbo... / altitud...).</td></tr>
+      <tr><td class="code">QAF</td><td class="preg">¿A qué hora estuvo usted sobre... (lugar)?</td><td>Estuve sobre... a las... horas a la altitud de...</td></tr>
+      <tr><td class="code">QAG</td><td class="preg">¿Está regulado su vuelo para arribar a las... horas?</td><td>Regule su vuelo para arribar a las... horas.</td></tr>
+      <tr><td class="code">QAH</td><td class="preg">¿Cuál es su altitud sobre el nivel medio del mar?</td><td>Mi altitud sobre el nivel medio del mar es de... metros (o pies).</td></tr>
+      <tr><td class="code">QAM</td><td class="preg">¿Cuál es el último informe meteorológico para... (lugar)?</td><td>El último informe meteorológico para... es...</td></tr>
+      <tr><td class="code">QAN</td><td class="preg">¿Cuál es la dirección y velocidad del viento en la superficie en... (lugar)?</td><td>La dirección y velocidad del viento en la superficie en... es...</td></tr>
+      <tr><td class="code">QAO</td><td class="preg">¿Cuál es la dirección y velocidad del viento a la altitud de... en... (lugar)?</td><td>La dirección y velocidad del viento a la altitud de... es...</td></tr>
+      <tr><td class="code">QBA</td><td class="preg">¿Cuál es la visibilidad horizontal en la superficie en... (lugar)?</td><td>La visibilidad horizontal en la superficie en... es de... metros.</td></tr>
+      <tr><td class="code">QBB</td><td class="preg">¿Cuál es la cantidad, tipo y altura de la base de las nubes en... (lugar)?</td><td>La base de las nubes en... es de... (cantidad/tipo) a... metros de altura.</td></tr>
+      <tr><td class="code">QBF</td><td class="preg">¿Está volando en las nubes?</td><td>Estoy volando en las nubes a la altitud de...</td></tr>
+      <tr><td class="code">QBG</td><td class="preg">¿Está volando por encima de las nubes?</td><td>Estoy volando por encima de las nubes a la altitud de...</td></tr>
+      <tr><td class="code">QBH</td><td class="preg">¿Está volando por debajo de las nubes?</td><td>Estoy volando por debajo de las nubes a la altitud de...</td></tr>
+      <tr><td class="code">QDL</td><td class="preg">¿Tiene intención de pedir una serie de marcaciones radiogoniométricas?</td><td>Tengo intención de pedir una serie de marcaciones radiogoniométricas.</td></tr>
+      <tr><td class="code">QDM</td><td class="preg">¿Cuál es el rumbo magnético para dirigirme hacia usted con viento nulo?</td><td>El rumbo magnético para dirigirse hacia mí con viento nulo es... grados.</td></tr>
+      <tr><td class="code">QDR</td><td class="preg">¿Cuál es mi marcación magnética respecto a usted?</td><td>Su marcación magnética respecto a mí es de... grados.</td></tr>
+      <tr><td class="code">QEC</td><td class="preg">¿Tiene intención de aterrizar directamente sin circuito de espera?</td><td>Tengo intención de aterrizar directamente / Aterrice directamente sin circuito.</td></tr>
+      <tr><td class="code">QFA</td><td class="preg">¿Cuál es el pronóstico meteorológico para la ruta desde... hasta...?</td><td>El pronóstico meteorológico para la ruta es...</td></tr>
+      <tr><td class="code">QFE</td><td class="preg">¿Cuál es la presión atmosférica al nivel oficial del aeródromo?</td><td>La presión atmosférica al nivel oficial del aeródromo es de... milibares (o hectopascales).</td></tr>
+      <tr><td class="code">QFF</td><td class="preg">¿Cuál es la presión atmosférica corregida al nivel del mar (cálculo meteorológico)?</td><td>La presión atmosférica corregida al nivel del mar es de... unidades.</td></tr>
+      <tr><td class="code">QFU</td><td class="preg">¿Cuál es la dirección magnética de la pista en servicio?</td><td>La dirección magnética de la pista en servicio es de... grados.</td></tr>
+      <tr><td class="code">QNH</td><td class="preg">¿Qué ajuste barométrico debo poner en el altímetro para que indique la elevación del aeródromo al aterrizar?</td><td>Ajuste su altímetro a... unidades (QNH) para obtener la elevación exacta en tierra.</td></tr>
+      <tr><td class="code">QNT</td><td class="preg">¿Cuál es la velocidad máxima de las rachas de viento en la superficie en...?</td><td>La velocidad máxima de las rachas de viento en la superficie es de... nudos.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Servicio marítimo <span class="range">QOA – QOJ</span></h2>
+  <table class="data t-q">
+    <colgroup><col><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Pregunta (QXX?)</th><th>Respuesta / aviso (QXX)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">QOA</td><td class="preg">¿Puede comunicarse por radiotelegrafía en 500 kHz?</td><td>Puedo comunicarme por radiotelegrafía en 500 kHz.</td></tr>
+      <tr><td class="code">QOB</td><td class="preg">¿Puede comunicarse por radiotelefonía en 2182 kHz?</td><td>Puedo comunicarme por radiotelefonía en 2182 kHz.</td></tr>
+      <tr><td class="code">QOC</td><td class="preg">¿Puede comunicarse por radiotelefonía en el canal VHF 16?</td><td>Puedo comunicarme por radiotelefonía en el canal VHF 16.</td></tr>
+      <tr><td class="code">QOD</td><td class="preg">¿Puede comunicarse conmigo en... (1. Neerlandés; 2. Inglés; 3. Francés; 4. Alemán; 5. Griego; 6. Italiano)?</td><td>Puedo comunicarme con usted en...</td></tr>
+      <tr><td class="code">QOE</td><td class="preg">¿Ha recibido la señal de seguridad transmitida por... (nombre del barco)?</td><td>He recibido la señal de seguridad transmitida por...</td></tr>
+      <tr><td class="code">QOF</td><td class="preg">¿Cuál es la calidad comercial de mis señales?</td><td>La calidad comercial de sus señales es... (1. No comercial; 2. Marginal; 3. Comercial).</td></tr>
+      <tr><td class="code">QOG</td><td class="preg">¿Cuántos canales o frecuencias tiene disponibles para trabajar?</td><td>Tengo... canales o frecuencias disponibles.</td></tr>
+      <tr><td class="code">QOH</td><td class="preg">¿Debo enviar una señal de guía para su equipo de recepción?</td><td>Envíe una señal de guía por... segundos.</td></tr>
+      <tr><td class="code">QOI</td><td class="preg">¿Puede transmitir su señal de identificación automática?</td><td>Voy a transmitir mi señal de identificación automática.</td></tr>
+      <tr><td class="code">QOJ</td><td class="preg">¿Puede escuchar en la frecuencia de socorro de... kHz / MHz?</td><td>Estoy escuchando en la frecuencia de socorro de... kHz / MHz.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ================= SECCIÓN 2 · CLAVES R ================= -->
+<section class="doc sec-r">
+  <header class="sec-head">
+    <div class="sec-kicker">Sección 2</div>
+    <h1>Claves R de Radiocomunicaciones</h1>
+    <p class="src-line"><strong>Claves R</strong> — <em>Fuente: Corporación Nacional Forestal (CONAF)</em></p>
+  </header>
+
+  <h2>A. De las comunicaciones <span class="range">R-1 a R-19</span></h2>
+  <table class="data t-r">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Interpretación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">R-1</td><td>RECEPCIÓN DEFICIENTE</td></tr>
+      <tr><td class="code">R-2</td><td>BUENA RECEPCIÓN</td></tr>
+      <tr><td class="code">R-3</td><td>DETENGA LAS TRANSMISIONES, ESPERE FRECUENCIA LIBRE PARA REANUDARLA</td></tr>
+      <tr><td class="code">R-4</td><td>COMPRENDIDO</td></tr>
+      <tr><td class="code">R-5</td><td>REPITA</td></tr>
+      <tr><td class="code">R-2-5</td><td>NO SE ENTIENDE SU MENSAJE, EXPLIQUE</td></tr>
+      <tr><td class="code">R-6</td><td>ESPERE PARA RESPUESTA O COMETIDO COMPRENDIDO</td></tr>
+      <tr><td class="code">R-7</td><td>TÉRMINO DE TRANSMISIONES DEL DÍA</td></tr>
+      <tr><td class="code">R-8</td><td>INICIO DE TRANSMISIONES DE RADIOCOMUNICACIONES</td></tr>
+      <tr><td class="code">R-9</td><td>¿CÓMO RECIBE ESTE EQUIPO DE RADIO?</td></tr>
+      <tr><td class="code">R-10</td><td>NOMBRE DE LA PERSONA QUE TRANSMITE</td></tr>
+      <tr><td class="code">R-11</td><td>DISPONIBLE PARA HABLAR POR RADIO</td></tr>
+      <tr><td class="code">R-12</td><td>CONTACTO RADIAL</td></tr>
+      <tr><td class="code">R-13</td><td>HÁGAME PUENTE CON (INDIQUE CLAVE)</td></tr>
+      <tr><td class="code">R-14</td><td>MENSAJE OFICIAL</td></tr>
+      <tr><td class="code">R-15</td><td>ENTREGAR MENSAJE DE INMEDIATO O PENDIENTE</td></tr>
+      <tr><td class="code">R-16</td><td>LLAMADA GENERAL, CUALQUIER EQUIPO EN ESCUCHA FAVOR RESPONDER</td></tr>
+      <tr><td class="code">R-17</td><td>ATENTO CADENA RADIAL (MENSAJE OFICIAL)</td></tr>
+      <tr><td class="code">R-18</td><td>SÍRVASE IDENTIFICAR QUIEN LLAMA</td></tr>
+      <tr><td class="code">R-19</td><td>SIN NOVEDAD</td></tr>
+    </tbody>
+  </table>
+
+  <h2>B. De las operaciones <span class="range">R-20 a R-49</span></h2>
+  <table class="data t-r">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Interpretación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">R-20</td><td>INCENDIO FORESTAL</td></tr>
+      <tr><td class="code">R-21</td><td>NOVEDAD DE INCENDIO FORESTAL U OTRA NOVEDAD</td></tr>
+      <tr><td class="code">R-22</td><td>INFORME DEL O LOS INCENDIOS FORESTALES</td></tr>
+      <tr><td class="code">R-23</td><td>PERSONAL DEL PREDIO EN COMBATE</td></tr>
+      <tr><td class="code">R-24</td><td>EN COMBATE, BAJO OBSERVACIÓN, SIN COMBATE</td></tr>
+      <tr><td class="code">R-25</td><td>INCENDIO CONTROLADO</td></tr>
+      <tr><td class="code">R-26</td><td>INCENDIO ETAPA DE LIQUIDACIÓN</td></tr>
+      <tr><td class="code">R-27</td><td>INCENDIO EXTINGUIDO</td></tr>
+      <tr><td class="code">R-28</td><td>REGRESO BASE</td></tr>
+      <tr><td class="code">R-29</td><td>DESPLAZAMIENTO AL LUGAR DEL INCENDIO / OTRO LUGAR</td></tr>
+      <tr><td class="code">R-30</td><td>INCENDIO SE ACTIVÓ (POR CONFIRMAR CAUSA)</td></tr>
+      <tr><td class="code">R-31</td><td>JEFE DE INCENDIO</td></tr>
+      <tr><td class="code">R-32</td><td>JEFE DE SECTOR DEL INCENDIO</td></tr>
+      <tr><td class="code">R-33</td><td>INDICAR QUÉ HORA TIENE UD.</td></tr>
+      <tr><td class="code">R-34</td><td>INFORME METEOROLÓGICO DEL DÍA Y PRONÓSTICO PARA LAS SIGUIENTES HORAS.</td></tr>
+      <tr><td class="code">R-35</td><td>INFORME DEL TIEMPO VISUAL DEL LUGAR</td></tr>
+      <tr><td class="code">R-36</td><td>CONDICIONES METEOROLÓGICAS PARA OPERACIONES AÉREAS.</td></tr>
+      <tr><td class="code">R-37</td><td>HORA DE DESPEGUE DE LA AERONAVE</td></tr>
+      <tr><td class="code">R-38</td><td>HORA DE ATERRIZAJE DE LA AERONAVE</td></tr>
+      <tr><td class="code">R-39</td><td>HORA DE ARRIBO Y LUGAR DE UBICACIÓN</td></tr>
+      <tr><td class="code">R-40</td><td>HORA DE ARRIBO A BASE U OTRO QUE SE DIRIJA</td></tr>
+      <tr><td class="code">R-41</td><td>CANCELAR LA MISIÓN TERRESTRE, AÉREA U OTRA ACTIVIDAD</td></tr>
+      <tr><td class="code">R-42</td><td>CHARLA INDUCCIÓN</td></tr>
+      <tr><td class="code">R-43</td><td>TODO EL PERSONAL DEBE REGRESAR AL PUNTO DE ENCUENTRO</td></tr>
+      <tr><td class="code">R-44</td><td>ALÉJENSE DEL HELIPUNTO, HELICÓPTERO EN R-37 O R-38</td></tr>
+      <tr><td class="code">R-45</td><td>ME HE DETENIDO PARA RECIBIR INSTRUCCIONES</td></tr>
+      <tr><td class="code">R-46</td><td>BRIGADA POSICIONADA EN UN PUNTO POR CENCOR EN ALERTA</td></tr>
+      <tr><td class="code">R-47</td><td>NECESITO AL ENCARGADO DE PRIMEROS AUXILIOS EN (INDICA POSICIÓN)</td></tr>
+      <tr><td class="code">R-48</td><td>TRANSMITA EN CÓDIGO ALTERNATIVO</td></tr>
+      <tr><td class="code">R-49</td><td>SUSPENDA LO QUE ESTÁ HACIENDO, ATENTO A INSTRUCCIONES</td></tr>
+    </tbody>
+  </table>
+
+  <h2>C. Interpretación <span class="range">R-50 a R-61</span></h2>
+  <table class="data t-r">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Interpretación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">R-50</td><td>DISPONIBLE PARA SER LLAMADO POR TELÉFONO</td></tr>
+      <tr><td class="code">R-51</td><td>DISPONIBLE POR RADIO</td></tr>
+      <tr><td class="code">R-52</td><td>SE SOLICITA PRESENCIA DE</td></tr>
+      <tr><td class="code">R-53</td><td>DOMICILIO PARTICULAR</td></tr>
+      <tr><td class="code">R-54</td><td>CÓNYUGE DE...</td></tr>
+      <tr><td class="code">R-55</td><td>PADRES DE...</td></tr>
+      <tr><td class="code">R-56</td><td>TOME NOTA. LLAME POR TELÉFONO Y PASE EL SIGUIENTE MENSAJE</td></tr>
+      <tr><td class="code">R-57</td><td>REALICE PREPARATIVOS PARA...</td></tr>
+      <tr><td class="code">R-58</td><td>SE SOLICITA AUTORIZACIÓN PARA...</td></tr>
+      <tr><td class="code">R-59</td><td>AUTORIZADA O NEGATIVO LA SOLICITUD</td></tr>
+      <tr><td class="code">R-60</td><td>ES UNA ORDEN CUMPLIRLA</td></tr>
+      <tr><td class="code">R-61</td><td>SE CONSULTA POR EL ESTADO DE SALUD</td></tr>
+    </tbody>
+  </table>
+
+  <h2>D. De las emergencias <span class="range">R-70 a R-88</span></h2>
+  <table class="data t-r">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Interpretación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">R-70</td><td>SE DECLARA EMERGENCIA POR...</td></tr>
+      <tr><td class="code">R-71</td><td>INFORMO QUE LA UNIDAD O PERSONA SUFRIÓ UN ACCIDENTE: CLAVE 1 LEVE, CLAVE 2 MEDIANA GRAVEDAD, CLAVE 3 GRAVE</td></tr>
+      <tr><td class="code">R-72</td><td>ACCIDENTE CON RESULTADOS FATALES</td></tr>
+      <tr><td class="code">R-73</td><td>LAS COMUNICACIONES QUEDAN RESTRINGIDAS POR EMERGENCIA. SOLO TRÁFICO DE EMERGENCIA (INCENDIO, ACCIDENTES).</td></tr>
+      <tr><td class="code">R-74</td><td>DESDE ESTE MOMENTO, HASTA NUEVO AVISO SE SUSPENDE TODO TRÁFICO RADIAL (SILENCIO TOTAL).</td></tr>
+      <tr><td class="code">R-75</td><td>PUEDEN REASUMIR TRÁFICO NORMAL, COMUNICANDO NOVEDADES SI HAY.</td></tr>
+      <tr><td class="code">R-76</td><td>PONGA CUIDADO EN LO QUE DIGA, OTRAS PERSONAS PUEDEN ESCUCHAR SU TRANSMISIÓN.</td></tr>
+      <tr><td class="code">R-77</td><td>MÓVIL O AERONAVE CON PROBLEMAS MECÁNICOS.</td></tr>
+      <tr><td class="code">R-78</td><td>SE NECESITA PERSONAL</td></tr>
+      <tr><td class="code">R-79</td><td>SE NECESITA EQUIPOS (ESPECIFICAR).</td></tr>
+      <tr><td class="code">R-80</td><td>SE NECESITA ALIMENTACIÓN. INDICAR PARA QUÉ UNIDAD, OTROS Y CANTIDADES</td></tr>
+      <tr><td class="code">R-81</td><td>SE NECESITA PERSONAL POLICIAL. INDICAR COMETIDO.</td></tr>
+      <tr><td class="code">R-82</td><td>SE NECESITA PERSONAL POLICIAL, POSIBLE CAUSANTE O SOSPECHOSO POR INCENDIO FORESTAL.</td></tr>
+      <tr><td class="code">R-83</td><td>INCENDIO FORESTAL EN INSTALACIONES DE LA FF.AA</td></tr>
+      <tr><td class="code">R-84</td><td>INCENDIO EN CAMPO MINADO. DIFÍCIL SU CONTROL</td></tr>
+      <tr><td class="code">R-88</td><td>SOLICITO PRIORIDAD DE FRECUENCIA PARA UN MENSAJE DE URGENCIA INMEDIATA.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>E. De las estadísticas <span class="range">R-90 en adelante</span></h2>
+  <table class="data t-r">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Interpretación</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">R-90</td><td>ENVIAR SISTEMA ESTADÍSTICO EN FORMA INTERNA Y EXTERNA</td></tr>
+      <tr><td class="code">R-91</td><td>SOLICITO TOTAL HORAS VOLADAS Y ACUMULADAS Y SALDO DE SU REGIÓN A LA FECHA</td></tr>
+      <tr><td class="code">R-92</td><td>HORAS VOLADAS EN SU REGIÓN POR OTRAS AERONAVES YA SEA EN COMBATE COMO EN OTRAS MISIONES.</td></tr>
+      <tr><td class="code">R-93</td><td>SOLICITO TOTAL DE HORAS VOLADAS EN DETECCIÓN AÉREA DESGLOSADA SOLO POR GRUPOS MÁS LA INFORMACIÓN DESGLOSADA POR CLUBES.</td></tr>
+      <tr><td class="code">R-95</td><td>QUEMA AUTORIZADA</td></tr>
+      <tr><td class="code">R-96</td><td>QUEMA NO AUTORIZADA</td></tr>
+      <tr><td class="code">R-101</td><td>VISITA PERSONAL DE LA EMPRESA</td></tr>
+      <tr><td class="code">R-102</td><td>VISITA PERSONAL AJENO A LA EMPRESA</td></tr>
+      <tr><td class="code">R-103</td><td>RECONOCIMIENTO DE TERRENO</td></tr>
+      <tr><td class="code">R-104</td><td>HABILITACIÓN DE POZOS, CORTAFUEGOS, FAJAS, ETC.</td></tr>
+      <tr><td class="code">R-105</td><td>PREPARACIÓN DEL PERSONAL Y EQUIPOS PARA INICIO DE QUEMAS</td></tr>
+      <tr><td class="code">R-106</td><td>PERSONAL LISTO A LA ESPERA DE CONDICIONES PARA INICIO DE QUEMA</td></tr>
+      <tr><td class="code">R-107</td><td>ENCENDIDO INICIADO A LAS ....... HRS.</td></tr>
+      <tr><td class="code">R-108</td><td>ENCENDIDO TERMINADO A LAS ...... HRS.</td></tr>
+      <tr><td class="code">R-109</td><td>RE-ENCENDIDO DE QUEMA (CONTINUACIÓN DE LA QUEMA)</td></tr>
+      <tr><td class="code">R-110</td><td>QUEMA SUSPENDIDA POR CONDICIONES ADVERSAS (INDICAR CAUSAS)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ================= SECCIÓN 3 · CÓDIGOS 10 GENERALES ================= -->
+<section class="doc sec-10">
+  <header class="sec-head">
+    <div class="sec-kicker">Sección 3</div>
+    <h1>Códigos 10 Generales</h1>
+    <p class="src-line"><strong>Códigos 10</strong> — <em>Sistema general de diez códigos · origen: Departamento de Policía de Illinois, 1937</em></p>
+  </header>
+
+  <div class="note">
+    <strong>Nota:</strong> señales breves usadas principalmente en radio y comunicaciones policiales/de seguridad para transmitir información de manera rápida y clara. Se reproduce la lista común sin adaptaciones locales.
+  </div>
+
+  <table class="data t-10">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Código</th><th>Significado</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="code">10-1</td><td>Señal mala</td></tr>
+      <tr><td class="code">10-2</td><td>Señal buena</td></tr>
+      <tr><td class="code">10-3</td><td>Alto la transmisión</td></tr>
+      <tr><td class="code">10-4</td><td>Afirmativo (Recibido)</td></tr>
+      <tr><td class="code">10-5</td><td>Repetir mensaje</td></tr>
+      <tr><td class="code">10-6</td><td>Ocupado, espere</td></tr>
+      <tr><td class="code">10-7</td><td>Fuera de servicio</td></tr>
+      <tr><td class="code">10-8</td><td>En servicio</td></tr>
+      <tr><td class="code">10-9</td><td>Repetir mensaje</td></tr>
+      <tr><td class="code">10-10</td><td>Negativo</td></tr>
+      <tr><td class="code">10-11</td><td>En camino</td></tr>
+      <tr><td class="code">10-12</td><td>Visitante presente</td></tr>
+      <tr><td class="code">10-13</td><td>Condiciones del tiempo</td></tr>
+      <tr><td class="code">10-14</td><td>Informe de estado</td></tr>
+      <tr><td class="code">10-15</td><td>Sospechoso bajo custodia</td></tr>
+      <tr><td class="code">10-16</td><td>Recoger a prisionero</td></tr>
+      <tr><td class="code">10-17</td><td>Urgente</td></tr>
+      <tr><td class="code">10-18</td><td>Inmediatamente</td></tr>
+      <tr><td class="code">10-19</td><td>Regresar a la base</td></tr>
+      <tr><td class="code">10-20</td><td>Localización</td></tr>
+      <tr><td class="code">10-21</td><td>Llamar por teléfono</td></tr>
+      <tr><td class="code">10-22</td><td>Cancelar</td></tr>
+      <tr><td class="code">10-23</td><td>Llegado al lugar</td></tr>
+      <tr><td class="code">10-24</td><td>Salir de lugar</td></tr>
+      <tr><td class="code">10-25</td><td>En contacto</td></tr>
+      <tr><td class="code">10-26</td><td>Mensaje recibido</td></tr>
+      <tr><td class="code">10-27</td><td>Comprobación de licencias</td></tr>
+      <tr><td class="code">10-28</td><td>Comprobación de placas</td></tr>
+      <tr><td class="code">10-29</td><td>Comprobación de récords</td></tr>
+      <tr><td class="code">10-30</td><td>Uso no autorizado</td></tr>
+      <tr><td class="code">10-31</td><td>Crimen en progreso</td></tr>
+      <tr><td class="code">10-32</td><td>Persona armada</td></tr>
+      <tr><td class="code">10-33</td><td>Emergencia</td></tr>
+      <tr><td class="code">10-34</td><td>Asistencia necesaria</td></tr>
+      <tr><td class="code">10-35</td><td>Información confidencial</td></tr>
+      <tr><td class="code">10-36</td><td>Hora correcta</td></tr>
+      <tr><td class="code">10-37</td><td>Operador en servicio</td></tr>
+      <tr><td class="code">10-38</td><td>Parada de tráfico</td></tr>
+      <tr><td class="code">10-39</td><td>Mensaje entregado</td></tr>
+      <tr><td class="code">10-40</td><td>Despejar el canal</td></tr>
+      <tr><td class="code">10-41</td><td>Inicio de turno</td></tr>
+      <tr><td class="code">10-42</td><td>Fin de turno</td></tr>
+      <tr><td class="code">10-43</td><td>Información urgente</td></tr>
+      <tr><td class="code">10-44</td><td>Pedido de servicio</td></tr>
+      <tr><td class="code">10-45</td><td>Llamada de emergencia</td></tr>
+      <tr><td class="code">10-46</td><td>Asistencia vehicular</td></tr>
+      <tr><td class="code">10-47</td><td>Accidente</td></tr>
+      <tr><td class="code">10-48</td><td>Solicitud de ambulancia</td></tr>
+      <tr><td class="code">10-49</td><td>Proceder al lugar</td></tr>
+      <tr><td class="code">10-50</td><td>Detalle no especificado</td></tr>
+      <tr><td class="code">10-51</td><td>Respuesta negativa</td></tr>
+      <tr><td class="code">10-52</td><td>Respuesta positiva</td></tr>
+      <tr><td class="code">10-53</td><td>Punto de encuentro</td></tr>
+      <tr><td class="code">10-54</td><td>Aviso</td></tr>
+      <tr><td class="code">10-55</td><td>Intoxicación</td></tr>
+      <tr><td class="code">10-56</td><td>Persona muerta</td></tr>
+      <tr><td class="code">10-57</td><td>Persecución</td></tr>
+      <tr><td class="code">10-58</td><td>Dirigiéndose a...</td></tr>
+      <tr><td class="code">10-59</td><td>Seguridad</td></tr>
+      <tr><td class="code">10-60</td><td>Patrullaje</td></tr>
+      <tr><td class="code">10-61</td><td>Persona sospechosa</td></tr>
+      <tr><td class="code">10-62</td><td>Necesidad de respuesta</td></tr>
+      <tr><td class="code">10-63</td><td>Trabajo en progreso</td></tr>
+      <tr><td class="code">10-64</td><td>Mensaje no claro</td></tr>
+      <tr><td class="code">10-65</td><td>Robo</td></tr>
+      <tr><td class="code">10-66</td><td>Suspensión</td></tr>
+      <tr><td class="code">10-67</td><td>Sospecha confirmada</td></tr>
+      <tr><td class="code">10-68</td><td>Necesidad de apoyo</td></tr>
+      <tr><td class="code">10-69</td><td>Cumplimiento de ley</td></tr>
+      <tr><td class="code">10-70</td><td>Fuego</td></tr>
+      <tr><td class="code">10-71</td><td>Disparos</td></tr>
+      <tr><td class="code">10-72</td><td>Explosión</td></tr>
+      <tr><td class="code">10-73</td><td>Asistencia de tráfico</td></tr>
+      <tr><td class="code">10-74</td><td>Todo bien</td></tr>
+      <tr><td class="code">10-75</td><td>Indisposición</td></tr>
+      <tr><td class="code">10-76</td><td>En camino</td></tr>
+      <tr><td class="code">10-77</td><td>Asistencia solicitada</td></tr>
+      <tr><td class="code">10-78</td><td>Urgencia de refuerzos</td></tr>
+      <tr><td class="code">10-79</td><td>Reporte de bomba</td></tr>
+      <tr><td class="code">10-80</td><td>Seguimiento de coche</td></tr>
+      <tr><td class="code">10-81</td><td>Pruebas de bebida</td></tr>
+      <tr><td class="code">10-82</td><td>Recojo de preso</td></tr>
+      <tr><td class="code">10-83</td><td>Alarma de incendio</td></tr>
+      <tr><td class="code">10-84</td><td>Alarma de policía</td></tr>
+      <tr><td class="code">10-85</td><td>Reporte de amenaza</td></tr>
+      <tr><td class="code">10-86</td><td>Suspensión de licencia</td></tr>
+      <tr><td class="code">10-87</td><td>Suspensión de registro</td></tr>
+      <tr><td class="code">10-88</td><td>Orden de arresto</td></tr>
+      <tr><td class="code">10-89</td><td>Investigador</td></tr>
+      <tr><td class="code">10-90</td><td>Solicitud de tiempo</td></tr>
+      <tr><td class="code">10-91</td><td>Negativa a obedecer</td></tr>
+      <tr><td class="code">10-92</td><td>Asistencia de tráfico</td></tr>
+      <tr><td class="code">10-93</td><td>Solicitud de documento</td></tr>
+      <tr><td class="code">10-94</td><td>Verificación</td></tr>
+      <tr><td class="code">10-95</td><td>En ruta</td></tr>
+      <tr><td class="code">10-96</td><td>Necesidad de informe</td></tr>
+      <tr><td class="code">10-97</td><td>Llegada al lugar</td></tr>
+      <tr><td class="code">10-98</td><td>Terminación del llamado</td></tr>
+      <tr><td class="code">10-99</td><td>Solicitud de llamada</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ================= SECCIÓN 4 · ALFABETO FONÉTICO ================= -->
+<section class="doc sec-fon">
+  <header class="sec-head">
+    <div class="sec-kicker">Sección 4</div>
+    <h1>Alfabeto Fonético</h1>
+    <p class="src-line"><strong>Alfabeto Fonético</strong> — <em>Fuente: OACI/ICAO — Alfabeto de Deletreo Radiotelefónico Internacional</em></p>
+  </header>
+
+  <div class="note">
+    <strong>Uso:</strong> deletrear palabras críticas (nombres, calles, indicativos) letra por letra,
+    pronunciando cada palabra de la tabla. Ejemplo: «B» → BRAVO.
+  </div>
+
+  <h2>Alfabeto de Deletreo Radiotelefónico Internacional</h2>
+  <table class="data t-fon" style="width:120mm">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Letra</th><th>Palabra</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="letra">A</td><td class="palabra">ALFA</td></tr>
+      <tr><td class="letra">B</td><td class="palabra">BRAVO</td></tr>
+      <tr><td class="letra">C</td><td class="palabra">CHARLIE</td></tr>
+      <tr><td class="letra">D</td><td class="palabra">DELTA</td></tr>
+      <tr><td class="letra">E</td><td class="palabra">ECHO</td></tr>
+      <tr><td class="letra">F</td><td class="palabra">FOXTROT</td></tr>
+      <tr><td class="letra">G</td><td class="palabra">GOLF</td></tr>
+      <tr><td class="letra">H</td><td class="palabra">HOTEL</td></tr>
+      <tr><td class="letra">I</td><td class="palabra">INDIA</td></tr>
+      <tr><td class="letra">J</td><td class="palabra">JULIETT</td></tr>
+      <tr><td class="letra">K</td><td class="palabra">KILO</td></tr>
+      <tr><td class="letra">L</td><td class="palabra">LIMA</td></tr>
+      <tr><td class="letra">M</td><td class="palabra">MIKE</td></tr>
+      <tr><td class="letra">N</td><td class="palabra">NOVEMBER</td></tr>
+      <tr><td class="letra">O</td><td class="palabra">OSCAR</td></tr>
+      <tr><td class="letra">P</td><td class="palabra">PAPA</td></tr>
+      <tr><td class="letra">Q</td><td class="palabra">QUEBEC</td></tr>
+      <tr><td class="letra">R</td><td class="palabra">ROMEO</td></tr>
+      <tr><td class="letra">S</td><td class="palabra">SIERRA</td></tr>
+      <tr><td class="letra">T</td><td class="palabra">TANGO</td></tr>
+      <tr><td class="letra">U</td><td class="palabra">UNIFORM</td></tr>
+      <tr><td class="letra">V</td><td class="palabra">VICTOR</td></tr>
+      <tr><td class="letra">W</td><td class="palabra">WHISKY</td></tr>
+      <tr><td class="letra">X</td><td class="palabra">X-RAY</td></tr>
+      <tr><td class="letra">Y</td><td class="palabra">YANKEE</td></tr>
+      <tr><td class="letra">Z</td><td class="palabra">ZULU</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>

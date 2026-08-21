@@ -16,8 +16,9 @@ import sys
 import unicodedata
 from collections import Counter
 
-MD = "FUENTE_RADIOCOMUNICACIONES.md"
-HTML = "manual_radiocomunicaciones.html"
+import sys as _sys
+MD = _sys.argv[_sys.argv.index("--md")+1] if "--md" in _sys.argv else "FUENTE_RADIOCOMUNICACIONES.md"
+HTML = _sys.argv[_sys.argv.index("--html")+1] if "--html" in _sys.argv else "manual_radiocomunicaciones.html"
 
 # Correcciones puramente tipográficas permitidas (no cambian significado operativo)
 TYPO_FIXES = [
@@ -59,10 +60,12 @@ def md_rows():
 # ---------- Extracción desde Markdown ----------
 # Los patrones de código son disjuntos entre secciones, por lo que la
 # clasificación no requiere rastrear el encabezado de cada bloque.
-md_claves, md_r, md_q, md_alfabeto = {}, {}, {}, {}
+md_claves, md_r, md_q, md_alfabeto, md_gen = {}, {}, {}, {}, {}
 for cells in md_rows():
     if len(cells) >= 3 and re.match(r"^(10-|0-11)", cells[0]):
         md_claves[norm(cells[0])] = (norm(cells[1]), norm(cells[2]))
+    elif len(cells) == 2 and re.match(r"^10-\d+$", cells[0]):
+        md_gen[norm(cells[0])] = norm(cells[1])
     elif len(cells) == 2 and re.match(r"^R-\d+(-\d+)?$", cells[0]):
         md_r[norm(cells[0])] = norm(cells[1])
     elif len(cells) == 3 and re.match(r"^Q[A-Z]{2}$", cells[0]):
@@ -81,6 +84,14 @@ for m in re.finditer(
     if k in html_claves or k in dups:
         dups.append(k)
     html_claves[k] = (d, r)
+
+html_gen, dups_gen = {}, []
+for m in re.finditer(r'<tr><td class="code">(10-\d+)</td><td>(.*?)</td></tr>', html, re.S):
+    k = norm(re.sub(r"<[^>]+>", "", m.group(1)))
+    v = norm(re.sub(r"<[^>]+>", "", m.group(2)))
+    if k in html_gen or k in dups_gen:
+        dups_gen.append(k)
+    html_gen[k] = v
 
 html_r = {}
 for m in re.finditer(r'<tr><td class="code">(R-[\d-]+)</td><td>(.*?)</td></tr>', html, re.S):
@@ -116,14 +127,15 @@ diffs = [k for k in md_claves if k in html_claves and md_claves[k] != html_clave
 check("4. Descripciones y recursos despachados intactos", not diffs,
       "; ".join(f"{k}: {md_claves[k]} != {html_claves[k]}" for k in diffs[:5]))
 
-# 5. CDCIA
-cdc_md, cdc_html = md.count("CDCIA"), html.count("CDCIA")
-check("5. 'CDCIA' se mantiene como CDCIA", cdc_md == cdc_html and cdc_html > 0,
-      f"fuente={cdc_md}, doc={cdc_html}")
-check("5b. 'COMANDANCIA' preservado (clave 0-11)",
-      md.count("LO QUE DISPONGA COMANDANCIA") == html.count("LO QUE DISPONGA COMANDANCIA"))
-check("5c. 'SEGÚN REQUERIMIENTO DEL CB SOLICITANTE' preservado",
-      md.count("SEGÚN REQUERIMIENTO DEL CB SOLICITANTE") == html.count("SEGÚN REQUERIMIENTO DEL CB SOLICITANTE"))
+# 5. CDCIA y frases propias de la edición Claves 10 de Coquimbo
+if md_claves:
+    cdc_md, cdc_html = md.count("CDCIA"), html.count("CDCIA")
+    check("5. 'CDCIA' se mantiene como CDCIA", cdc_md == cdc_html and cdc_html > 0,
+          f"fuente={cdc_md}, doc={cdc_html}")
+    check("5b. 'COMANDANCIA' preservado (clave 0-11)",
+          md.count("LO QUE DISPONGA COMANDANCIA") == html.count("LO QUE DISPONGA COMANDANCIA"))
+    check("5c. 'SEGÚN REQUERIMIENTO DEL CB SOLICITANTE' preservado",
+          md.count("SEGÚN REQUERIMIENTO DEL CB SOLICITANTE") == html.count("SEGÚN REQUERIMIENTO DEL CB SOLICITANTE"))
 
 # 6. Códigos R
 r_missing = sorted(set(md_r) - set(html_r))
@@ -170,8 +182,13 @@ corruptos = [p for p in ("�", "Ã©", "Ã­", "Ã³", "Ãº", "Ã±", "â€",
 check("10. Sin caracteres corruptos / mojibake", not corruptos, str(corruptos))
 
 # 11. Tildes y eñes
-muestras = ["CÓDIGO", "FONÉTICO", "Coquimbo", "Telecomunicaciones", "Radiotelefónico",
+if md_claves:
+    muestras = [
             "MECÁNICA", "Atención", "Emanaciones", "cardiorrespiratorio", "CÓNYUGE", "SÍRVASE"]
+elif md_gen:
+    muestras = ["Comprobación", "teléfono", "Persecución", "Suspensión", "Localización"]
+else:
+    muestras = []
 faltan = [m for m in muestras if m not in html]
 check("11. Tildes y caracteres españoles correctos", not faltan, f"faltan={faltan}" if faltan else "")
 
