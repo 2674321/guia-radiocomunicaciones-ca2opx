@@ -13,6 +13,14 @@
   <br><sub>Escanea para consultar la guía desde el celular</sub>
 </p>
 
+## Vista de la guía web
+
+<p align="center">
+  <img src="docs/captura-web-1.png" alt="Captura de la guía web de radiocomunicaciones (vista 1)" width="49%">
+  <img src="docs/captura-web-2.png" alt="Captura de la guía web de radiocomunicaciones (vista 2)" width="49%">
+  <br><sub>Interfaz de consulta online de la guía</sub>
+</p>
+
 
 Manual de campo de consulta rápida, formato **A4 vertical**, optimizado para impresión
 (en color o blanco y negro). Edición personal de **CA2OPX**.
