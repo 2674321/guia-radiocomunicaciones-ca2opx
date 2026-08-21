@@ -1,5 +1,8 @@
 # Guía de Referencias Radiocomunicaciones
 
+[![Licencia MIT](https://img.shields.io/badge/licencia-MIT-blue)](LICENSE) ![Versión](https://img.shields.io/badge/versi%C3%B3n-v1.0-green) ![Formato](https://img.shields.io/badge/formato-A4%20imprimible-informational) [![CI](https://github.com/2674321/guia-radiocomunicaciones-ca2opx/actions/workflows/ci.yml/badge.svg)](https://github.com/2674321/guia-radiocomunicaciones-ca2opx/actions/workflows/ci.yml)
+
+
 > 🌐 **[Ver la guía online](https://2674321.github.io/guia-radiocomunicaciones-ca2opx/)** · [Descargar PDF](GUIA_RADIOCOMUNICACIONES.pdf)
 
 
