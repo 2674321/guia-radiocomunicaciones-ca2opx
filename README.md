@@ -5,6 +5,11 @@
 
 > 🌐 **[Ver la guía online](https://2674321.github.io/guia-radiocomunicaciones-ca2opx/)** · [Descargar PDF](GUIA_RADIOCOMUNICACIONES.pdf)
 
+<p align="center">
+  <img src="docs/qr-guia-online.png" alt="QR — guía online" width="180">
+  <br><sub>Escanea para consultar la guía desde el celular</sub>
+</p>
+
 
 Manual de campo de consulta rápida, formato **A4 vertical**, optimizado para impresión
 (en color o blanco y negro). Edición personal de **CA2OPX**.
