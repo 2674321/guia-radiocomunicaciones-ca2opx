@@ -3,12 +3,12 @@
 [![Licencia MIT](https://img.shields.io/badge/licencia-MIT-blue)](LICENSE) ![Versión](https://img.shields.io/badge/versi%C3%B3n-v1.0-green) ![Formato](https://img.shields.io/badge/formato-A4%20imprimible-informational) [![CI](https://github.com/2674321/guia-radiocomunicaciones-ca2opx/actions/workflows/ci.yml/badge.svg)](https://github.com/2674321/guia-radiocomunicaciones-ca2opx/actions/workflows/ci.yml)
 
 
-> Existen dos versiones de la guía — **Claves 10 Coquimbo**: [web](manual_radiocomunicaciones.html) · [PDF](GUIA_RADIOCOMUNICACIONES.pdf) | **Códigos 10 Banda Ciudadana**: [web](manual_codigos10_generales.html) · [PDF](GUIA_RADIOCOMUNICACIONES_GENERAL.pdf)
+> Existen dos versiones de la guía — **Claves 10 Cuerpo de Bomberos de Coquimbo**: [web](manual_radiocomunicaciones.html) · [PDF](GUIA_RADIOCOMUNICACIONES.pdf) | **Códigos 10 Banda Ciudadana**: [web](manual_codigos10_generales.html) · [PDF](GUIA_RADIOCOMUNICACIONES_GENERAL.pdf)
 
 > 🌐 **[Ver la guía online](https://2674321.github.io/guia-radiocomunicaciones-ca2opx/)** · [Descargar PDF](GUIA_RADIOCOMUNICACIONES.pdf)
 
 <p align="center">
-  <img src="docs/qr-guia-online.png" alt="QR — Guía · Claves 10 Coquimbo" width="180">
+  <img src="docs/qr-guia-online.png" alt="QR — Guía · Claves 10 Cuerpo de Bomberos de Coquimbo" width="180">
 <img src="docs/qr-guia-general-online.png" alt="QR — Guía · Códigos 10 Banda Ciudadana" width="180">
   <br><sub>Escanea para consultar la guía desde el celular</sub>
 </p>
