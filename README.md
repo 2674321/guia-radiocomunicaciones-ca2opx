@@ -3,6 +3,9 @@
 <p align="center"><img src="docs/branding/app-icon.svg" width="150" alt="Icono minimalista de la Guía de Radiocomunicaciones"></p>
 
 
+
+<p align="center"><img src="docs/branding/hero-banner.svg" width="100%" alt="Guía de Radiocomunicaciones"></p>
+
 **Autor:** [Patricio Varela C.](https://github.com/2674321) · **ORCID:** [0009-0002-1087-9445](https://orcid.org/0009-0002-1087-9445) · **Licencia:** [MIT](LICENSE) · **Citación:** [CITATION.cff](CITATION.cff)
 
 [![Licencia MIT](https://img.shields.io/badge/licencia-MIT-blue)](LICENSE) ![Versión](https://img.shields.io/badge/versi%C3%B3n-v1.0-green) ![Formato](https://img.shields.io/badge/formato-A4%20imprimible-informational) [![CI](https://github.com/2674321/guia-radiocomunicaciones-ca2opx/actions/workflows/ci.yml/badge.svg)](https://github.com/2674321/guia-radiocomunicaciones-ca2opx/actions/workflows/ci.yml)
