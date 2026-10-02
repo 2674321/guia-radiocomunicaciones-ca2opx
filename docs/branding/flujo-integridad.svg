@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" font-family="Inter,Segoe UI,Arial,sans-serif" role="img" aria-label="Flujo de integridad: fuentes, validación automática y salidas web y PDF">
+  <title>Flujo de integridad — Guía de Radiocomunicaciones</title>
+  <rect width="1200" height="675" fill="#F7F9FA"/>
+  <text x="64" y="92" font-size="40" font-weight="700" fill="#32191D">Flujo de integridad de la guía</text>
+  <text x="66" y="128" font-size="20" fill="#5D7583">Fuente única versionada → control automático → publicaciones web y PDF</text>
+  <line x1="64" y1="156" x2="1136" y2="156" stroke="#C9D6DC" stroke-width="2"/>
+
+  <g>
+    <g>
+      <rect x="64" y="196" width="312" height="360" rx="18" fill="#FFFFFF" stroke="#C9D6DC" stroke-width="2"/>
+      <rect x="64" y="196" width="312" height="66" rx="18" fill="#32191D"/>
+      <rect x="64" y="240" width="312" height="22" fill="#32191D"/>
+      <circle cx="100" cy="229" r="18" fill="#8B1E1E"/>
+      <text x="100" y="235" font-size="18" font-weight="700" fill="#EDF4F5" text-anchor="middle">1</text>
+      <text x="132" y="236" font-size="22" font-weight="700" fill="#EDF4F5">Fuentes</text>
+
+      <text x="92" y="306" font-size="16" font-weight="700" fill="#173A53">Manual general</text>
+      <rect x="92" y="318" width="256" height="42" rx="8" fill="#EDF4F5" stroke="#C9D6DC"/>
+      <text x="104" y="344" font-size="14" fill="#32191D">FUENTE_RADIOCOMUNICACIONES.md</text>
+
+      <text x="92" y="400" font-size="16" font-weight="700" fill="#173A53">Códigos 10 generales</text>
+      <rect x="92" y="412" width="256" height="42" rx="8" fill="#EDF4F5" stroke="#C9D6DC"/>
+      <text x="104" y="438" font-size="14" fill="#32191D">FUENTE_RADIOCOMUNICACIONES_GENERAL.md</text>
+
+      <text x="92" y="500" font-size="13" fill="#5D7583">Contenido normativo versionado en el</text>
+      <text x="92" y="522" font-size="13" fill="#5D7583">repositorio; es la referencia única.</text>
+    </g>
+
+    <g>
+      <rect x="444" y="196" width="312" height="360" rx="18" fill="#FFFFFF" stroke="#8B1E1E" stroke-width="3"/>
+      <rect x="444" y="196" width="312" height="66" rx="18" fill="#8B1E1E"/>
+      <rect x="444" y="240" width="312" height="22" fill="#8B1E1E"/>
+      <circle cx="480" cy="229" r="18" fill="#32191D"/>
+      <text x="480" y="235" font-size="18" font-weight="700" fill="#EDF4F5" text-anchor="middle">2</text>
+      <text x="512" y="236" font-size="22" font-weight="700" fill="#EDF4F5">Validación</text>
+
+      <text x="472" y="306" font-size="16" font-weight="700" fill="#173A53">check_integrity.py</text>
+      <text x="472" y="332" font-size="14" fill="#32191D">Compara fuente (MD) contra salida (HTML).</text>
+
+      <g font-size="13" fill="#32191D">
+        <circle cx="482" cy="368" r="4" fill="#8B1E1E"/><text x="498" y="373">Claves 10 completas, sin duplicar</text>
+        <circle cx="482" cy="398" r="4" fill="#8B1E1E"/><text x="498" y="403">Códigos Q y Claves R intactos</text>
+        <circle cx="482" cy="428" r="4" fill="#8B1E1E"/><text x="498" y="433">Alfabeto OACI: 26 letras</text>
+        <circle cx="482" cy="458" r="4" fill="#8B1E1E"/><text x="498" y="463">Tildes, ñ y sin mojibake</text>
+        <circle cx="482" cy="488" r="4" fill="#8B1E1E"/><text x="498" y="493">Tablas con thead y filas sin cortar</text>
+      </g>
+      <rect x="472" y="510" width="256" height="30" rx="8" fill="#32191D"/>
+      <text x="600" y="531" font-size="14" font-weight="700" fill="#EDF4F5" text-anchor="middle">13 controles automáticos</text>
+    </g>
+
+    <g>
+      <rect x="824" y="196" width="312" height="360" rx="18" fill="#FFFFFF" stroke="#C9D6DC" stroke-width="2"/>
+      <rect x="824" y="196" width="312" height="66" rx="18" fill="#173A53"/>
+      <rect x="824" y="240" width="312" height="22" fill="#173A53"/>
+      <circle cx="860" cy="229" r="18" fill="#8B1E1E"/>
+      <text x="860" y="235" font-size="18" font-weight="700" fill="#EDF4F5" text-anchor="middle">3</text>
+      <text x="892" y="236" font-size="22" font-weight="700" fill="#EDF4F5">Salida</text>
+
+      <text x="852" y="306" font-size="16" font-weight="700" fill="#173A53">Manuales publicados</text>
+      <rect x="852" y="318" width="256" height="34" rx="8" fill="#EDF4F5" stroke="#C9D6DC"/>
+      <text x="864" y="340" font-size="13" fill="#32191D">manual_radiocomunicaciones.html</text>
+      <rect x="852" y="360" width="256" height="34" rx="8" fill="#EDF4F5" stroke="#C9D6DC"/>
+      <text x="864" y="382" font-size="13" fill="#32191D">manual_codigos10_generales.html</text>
+      <rect x="852" y="402" width="256" height="34" rx="8" fill="#EDF4F5" stroke="#C9D6DC"/>
+      <text x="864" y="424" font-size="13" fill="#32191D">index.html</text>
+
+      <text x="852" y="470" font-size="16" font-weight="700" fill="#173A53">PDF</text>
+      <rect x="852" y="482" width="256" height="34" rx="8" fill="#EDF4F5" stroke="#C9D6DC"/>
+      <text x="864" y="504" font-size="13" fill="#32191D">GUIA_RADIOCOMUNICACIONES.pdf</text>
+      <text x="852" y="540" font-size="13" fill="#5D7583">Solo se publica si la validación</text>
+      <text x="852" y="558" font-size="13" fill="#5D7583">finaliza sin fallos.</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#8B1E1E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M376 372h56"/><path d="M420 360l14 12-14 12"/>
+    <path d="M756 372h56"/><path d="M800 360l14 12-14 12"/>
+  </g>
+</svg>
