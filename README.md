@@ -21,6 +21,16 @@
   <br><sub>Escanea para consultar la guía desde el celular</sub>
 </p>
 
+## Capturas
+
+Vistas reales de las páginas HTML, generadas automáticamente desde el código de este repositorio.
+
+| Portada | Guía operativa |
+|---|---|
+| ![Portada de las guías](docs/screenshots/01-portada.png) | ![Manual de radiocomunicaciones de Bomberos](docs/screenshots/02-manual-bomberos.png) |
+
+[Ver la guía de Banda Ciudadana](docs/screenshots/03-manual-banda-ciudadana.png) · [Abrir la versión web](https://2674321.github.io/guia-radiocomunicaciones-ca2opx/)
+
 ## Vista de la guía web
 
 <p align="center">
